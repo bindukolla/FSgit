@@ -5,49 +5,33 @@
      <h1 style= "text-align: center">
          Digital Lync - Training
      </h1>
+     <style>
+         th{
+             background-color: yellow;
+             font-size: 100%;
+         }
 
+         td{
+             text-align: center;
+         }
+     </style>
 
 </head>
 <body>
-    <img src="DL2.jpg" alt="Digital Lync Training" style= "width:1024px;height:512px">
+    <img 
+    style="display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 70%;
+    "
+    src="DL2.jpg" alt="Digital Lync Training">
     
    <br>
    <br>
 
-   <form>
-    <div class="container">
-      <h1>Register</h1>
-      <p>Please fill in this form to create an account.</p>
-      <hr>
-  
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-      <br>
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-      <br>
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-      <hr>
-  
-      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-      <button type="submit" class="registerbtn">Register</button>
-    </div>
-  
-    
-  </form>
-
-    <form >
-        <h1>SignIn</h1>
-        Email: <input type="text" name="UserName"><br>
-        Password: <input type="password" name="Password"><br>
-        <br>
-
-        <input type="submit" value="Register">
-
-    </form> 
-
-   <h2 style= "text-align: center">
+   
+    <h2 style= "text-align: center">
             Want to know more about our courses - Watch the videos below!!
     </h2>
     <br>
@@ -62,8 +46,120 @@
          src="https://www.youtube.com/embed/rJ8NoW59Td0">
     </iframe> 
 
+    <br><br>
+
+
+    <center>
+        <table border="2" height="40%" width="100%"> 
+            <tr>
+                <th>Course Title</th>
+                <th>Duration</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Register By</th>
+                <th>Time slot</th>
+            </tr>
+
+            <tr>
+                <td>Core Java</td>
+                <td>1 Month</td>
+                <td>1-Jan-2019</td>
+                <td>31-Jan-2019</td>
+                <td>25-Dec-2018</td>
+                <td>7:30 - 8:30 AM</td>
+            </tr>
+
+            <tr>
+                <td>Block Chain</td>
+                <td>2 Months</td>
+                <td>1-Jan-2019</td>
+                <td>28-Feb-2019</td>
+                <td>25-Dec-2018</td>
+                <td>8:00 - 9:00 AM</td>
+            </tr>
+             
+                
+            <tr>
+                <td>Full Stack</td>
+                <td>3 Months</td>
+                <td>15-Jan-2019</td>
+                <td>15-Apr-2019</td>
+                <td>10-Jan-2019</td>
+                <td>7:00 - 8:00 AM</td>
+            </tr>    
+
+            <tr>
+                <td>Python</td>
+                <td>3 Months</td>
+                <td>15-Jan-2019</td>
+                <td>15-Apr-2019</td>
+                <td>10-Jan-2019</td>
+                <td>5:00 - 6:00 PM</td>
+            </tr>
+    
+            <tr>
+                <td>Core Java</td>
+                <td>1 Month</td>
+                <td>1-Feb-2019</td>
+                <td>28-Feb-2019</td>
+                <td>25-Jan-2019</td>
+                <td>7:30 - 8:30 AM</td>
+            </tr>
+                 
+                    
+            <tr>
+                <td>Devops</td>
+                <td>2 Month</td>
+                <td>10-Jan-2019</td>
+                <td>10-Mar-2019</td>
+                <td>5-Jan-2019</td>
+                <td>5:30 - 6:30 PM</td>
+            </tr>    
+        </table>
+    </center>   
+
     <br>
     <br>
+ 
+    <h1 style="text-align: center; color: red">Registration Form</h1>
+    <form>
+        <center>
+        Username: <input type="text" id="username"> <br><br>
+        Password: <input type="password" id="password"> <br><br>
+        Email: <input type="email" id="email"> <br><br>
+        DOB: <input type="date" id="birthdate"> <br><br>
+        Male: <input type="radio" name="gender">
+        Female: <input type="radio" name="gender"> <br><br>
+        Qualification: <select id="qualification">
+            <option value="BTech">BTech</option>
+            <option value="MTech">MTech</option>
+            <option value="MCA">MCA</option>
+        </select> <br><br>
+        <input type="checkbox" id="tandc">I agree to terms and conditions <br><br>
+        <button onclick="dataHandler()">Register Me!!</button>
+
+        </center>
+    </form>
+    <p> Your Input: <span id = "userDetails"></span> </p>
+
+   
+<script>
+      function dataHandler(){
+          console.log("inside data handler");
+          event.preventDefault();
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+          var email = document.getElementById("email").value;
+          var birthdate = document.getElementById("birthdate").value;
+          var gender = document.querySelector('input[name="gender"]:checked').value;
+          var qualification = document.getElementById("qualification").value;
+          var userDetails= username + "\t" + password + "\t" + email + "\t" + birthdate + "\t" + gender + "\t" + qualification;
+      
+        //document.getElementById('display').innerHTML = 
+                    document.getElementById("userDetails").innerHTML= userDetails;
+    }
+</script>
+
 
     <h4 style="text-align:center">
        For any queries please contact 040-21212121
